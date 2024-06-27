@@ -221,7 +221,7 @@ app.delete('/api/boardtodos', authenticateToken, async (req, res) => {
 // API to get the image for the timer
 app.get('/api/image', async(req, res) => {
     try {
-        const response = await axios.get(`https://api.unsplash.com/photos/random/?client_id=MrQVZJ9jzn_fkjVj-0K5w8rOS32pggDpmdRIltOQ2FE&orientation=landscape&collections=1753518`);
+        const response = await axios.get(`https://api.unsplash.com/photos/random/?client_id=${process.env.CLIENTID}&orientation=landscape&collections=1753518`);
         const imageUrl = response.data.urls.regular;
         res.json({ imageUrl });
     } catch (error) {
