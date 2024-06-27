@@ -1,0 +1,373 @@
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #202124;
+}
+  
+html, body, #root, .page {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    overflow: hidden;
+}
+
+.page { 
+    display: flex;
+    background: #edddd2;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;        
+}
+
+#homeMain {
+    justify-content: center;
+    gap: 15px;
+}
+
+.page > hr {
+    border: 1px solid rgb(80, 80, 80);
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav i {
+    margin: 0px 10px;
+}
+
+i:hover,button:hover {
+    opacity: 70%;
+    cursor: pointer;
+}
+
+/* Calendar */
+
+#addTasks input {
+    margin: 20px;
+    width: 40vw;
+}
+
+#addTasks button {
+    margin:20px 0px;
+}
+
+
+#addTasks button, #addTasks input {
+    padding: 10px;
+} 
+
+#calendarArea {
+    display: flex;
+}
+
+#itemsContainer {
+    margin-left: 10px;
+    background-color: rgba(255, 255, 255, 0.426);
+}
+
+#itemsContainer, #calendarContainer {
+    height: 80vh;
+    overflow-y: scroll;
+}
+
+.todoItem {
+    cursor: grab;
+    display: flex;
+    margin-bottom: 6px;
+    padding: 7px;
+    position: relative; /* Add positioning context */
+}
+
+.todoItem, #itemsContainer {
+    width: 11vw;
+}
+
+#itemsContainer, #calendarContainer {
+    border-radius: 7px;
+}
+
+.delete {
+    color: red;
+}
+
+.todoMenu button {
+    border: none;
+    background:transparent;
+}
+
+.todoMenuActive{
+    z-index: 2;
+    opacity: 1;
+    visibility: visible;
+}
+
+.todoMenuInactive {
+    opacity: 0;
+    visibility: hidden ;
+}
+
+
+
+
+#itemsContainer header {
+    display: flex;
+    justify-content: center;
+} 
+  
+.todoItem p {
+    flex: 1;
+}
+
+.right i {
+    margin-left: 1px;
+}
+
+
+.todoMenu {
+    background-color: white;
+    border-radius: 3px;
+    border: 1px solid black;
+    padding: 0px 5px;
+    width: min-content;
+    position: absolute; /* Position absolutely */
+    top: 0; /* Align to the top of .todoItem */
+    right: 0; /* Align to the right of .todoItem */
+}
+
+#calendarContainer {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+ 
+#calendarContainer header {
+    text-align: center;
+    width: 100%;
+    background-color: rgb(229, 229, 229);
+}
+
+.days {
+    display: flex;
+    flex-direction: row;
+}
+
+.day {
+    text-align: center;
+}
+
+.times {
+    display: flex;
+    flex-direction: column;
+}
+
+.times, .day, hr {
+    border: 1px solid lightgray;
+}
+
+.time, .dayblock, .todoItem p, .todoMenu button {
+    font-size: 11px;
+}
+
+.time {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dayblock, .time {
+    height: 6vh;
+}
+
+.dayblock {
+    width: 10vw;
+    text-align: start;
+}
+
+.boardTodo {
+    height: 100%;
+    width: 100%;    
+    overflow-wrap: break-word;
+    overflow-y:scroll;
+    transition: background-color 0.3s ease, color 0.3s ease; 
+}
+
+.boardTodo:hover{
+    background-color: lightgreen;
+    color: transparent;
+    cursor: pointer;
+}
+
+
+#todoCardText {
+    width: 20px;
+    overflow-wrap: break-word;
+}
+
+
+
+
+/* Login and stuff */
+
+#loginMain, #registerMain {
+    justify-content: center;
+}
+
+#registerNavigate, #loginNavigate {
+    background-color: transparent;
+    border:none;
+}
+
+#registerNavigate:hover, #loginNavigate:hover {
+    color:rgb(0, 28, 139);
+    cursor: pointer;
+}
+
+
+
+/* Timer */
+
+#scenicMode {
+    position:absolute
+}
+
+#timerCenter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+#timerArea {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#changeTime {
+    width: 50px
+}
+
+#toggle {
+    width: 60px;
+}
+
+
+#timerMain {
+    transition: background-image 1s ease; /* Smooth transition for background image */
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+
+
+
+.settings {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+   position: absolute;
+   margin: 10px;
+   right: 0;
+}
+
+.settingsMenuActive {
+    z-index: 2;
+    opacity: 1;
+    visibility: visible;
+}
+
+.settingsMenuInactive {
+    opacity: 0;
+    visibility: hidden ;
+}
+
+.settingsMenu {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 3px;
+    border: 1px solid black;
+    padding: 0 5px;
+    width: 12vw;
+    margin-top: 1px;
+    font-size: 14px;
+}
+
+#timeText {
+    color: black;
+    size: 20px;
+}
+
+
+
+#timerMessage {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    background-color: white;
+    border:none;
+    font-size: 40zpx;
+    z-index: 3;
+    padding: 20px;
+    border-radius: 6px;
+    margin-bottom: 52px;
+}
+
+
+
+
+button, input, .todoItem{
+    border: none;
+    background-color: white;
+    border-radius: 7px;
+}
+
+
+.timerButton, #changeTime, .submitButton, .emailField, .passwordField {
+    padding: 10px;
+    margin: 3px;
+}
+
+#changeTime {
+    width: 150px;
+}
+
+#buttons {
+    margin-top: 10px;
+}
+
+
+#toggle, #timeButton {
+    width: 70px;
+}
+.navLogReg {
+    font-size: 13px;
+}
+
+.error {
+    color: red;
+    font-size: 13px;
+}
+
+#messageButton {
+
+    margin-left: 10px;
+}
